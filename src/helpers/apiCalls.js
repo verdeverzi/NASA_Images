@@ -1,13 +1,14 @@
 import axios from "axios";
 const api_key = process.env.REACT_APP_API_KEY;
-
 export const getNasaHeroImage = async () => {
+  console.log("API Key: ", process.env.REACT_APP_API_KEY);
   try {
     const { data } = await axios.get("https://api.nasa.gov/planetary/apod", {
       params: {
         api_key,
       },
     });
+    console.log(api_key)
 
     return data;
   } catch (error) {
@@ -16,6 +17,7 @@ export const getNasaHeroImage = async () => {
 };
 
 export const getNasaImages = async () => {
+  console.log("API Key: ", process.env.REACT_APP_API_KEY);
   try {
     const { data } = await axios.get("https://api.nasa.gov/planetary/apod", {
       params: {
